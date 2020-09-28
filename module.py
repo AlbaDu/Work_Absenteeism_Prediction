@@ -21,9 +21,9 @@ class CustomScaler(BaseEstimator,TransformerMixin):
 
     def transform(self, X, y = None, copy = None):
         init_col_order = X.columns
-        X_scaled = pd.DataFrame(self.scaler.transform(X[self.columns]), columns=self.columns)
+        X_scaled = pd.DataFrame(self.scaler.transform(X[self.columns]), columns = self.columns)
         X_not_scaled = X.loc[:,~X.columns.isin(self.columns)]
-        return pd.concat([X_not_scaled, X_scaled], axis = 1)[init_col_order]
+        return pd.merge(X_scaled, X_not_scaled, left_index = True, right_index =  True)
 
 #Complete process for new data (Loading + pre-processing + target generation + standardization + prediction)
 class absenteeism_model():
@@ -71,7 +71,7 @@ class absenteeism_model():
             self.preprocessed_data = df.copy()
             self.data = self.scaler.transform(df)
     
-        #Pprobability of a data point to be 1
+        #Probability of a data point to be 1
         def predicted_probability(self):
             if (self.data is not None):  
                 pred = self.model_mod.predict_proba(self.data)[:,1]
