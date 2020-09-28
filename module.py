@@ -57,8 +57,8 @@ class absenteeism_model():
       
             #Transform date into weekday and month columns and drop entry
             df["date"] = pd.to_datetime(df["date"], format = "%d/%m/%Y")
-            df["weekday"] = df["date"].weekday()
-            df["month"] = df["date"].month
+            df["weekday"] = df["date"].apply(lambda x: x.weekday())
+            df["month"] = df["date"].apply(lambda x: x.month)
             df.drop(["date"], axis = 1, inplace = True)
 
             #Group education into 2 categories
