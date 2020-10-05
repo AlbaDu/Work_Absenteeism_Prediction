@@ -9,6 +9,10 @@ This project has 3 parts:
  
  3. DATA INTEGRATION IN SQL: Last but not least, we great a connection between Python and SQL to automatically insert the predicted outputs into a SQL database. Here the needed       files would be **Absenteeism_module.ipynb** & **module.py**
 
+
+
+
+
 IMPORTANT INFORMATION 1: For SQL I've used MySQL.
 
 IMPORTANT INFORMATION 2: All the data & files used and generated can be find in the **Data_and_Files** folder.
