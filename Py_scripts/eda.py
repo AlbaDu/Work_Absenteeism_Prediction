@@ -14,7 +14,7 @@ def file2df(file_):
     ---What it returns---
         + new_df: dataframe containing the data from the file.
     """
-    path = "C:\\Users\\34609\\Documents\\Repos Git\\Data\\"
+    path = "..."
     
     if file_.endswith("csv"):
         name = str(path + file_)
@@ -57,5 +57,5 @@ def df2file(df_):
     IMPORTANT! the files would be stored in the path specified by the function and the name should be given WITHOUT the .csv extension.
     """
     name = input("Name of the file WITHOUT .csv")
-    path = str("C:\\Users\\34609\\Documents\\Repos Git\\Work_Absenteeism_Prediction\\Data_and_files\\" + name + ".csv")
+    path = str("...\\Work_Absenteeism_Prediction\\Data_and_files\\" + name + ".csv")
     df_.to_csv(path, index = False)

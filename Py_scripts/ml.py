@@ -13,7 +13,7 @@ def file2df(file_):
     ---What it returns---
         + new_df: dataframe containing the data from the file.
     """
-    path = "C:\\Users\\34609\\Documents\\Repos Git\\Data\\"
+    path = "..."
     name = str(path + file_)
     new_df = pd.read_csv(name)
     return new_df
